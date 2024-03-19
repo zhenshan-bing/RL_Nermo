@@ -1,0 +1,16 @@
+<mujoco>
+    <sensor>
+        <jointpos name="thigh_joint_fl" joint="thigh_joint_fl"/>
+        <jointpos name="leg_joint_fl" joint="leg_joint_fl"/>
+<!--        <jointvel name="thigh_joint_fl_vel" joint="thigh_joint_fl"/>-->
+<!--        <jointvel name="leg_joint_fl_vel" joint="leg_joint_fl"/>-->
+    </sensor>
+
+    <actuator>
+        <!--actuator range leg_joint_fl -2.00 1.20 thigh_joint_fl -2.2 0.7  about 0.2 bigger than reference picture-->
+        <position name="leg_joint_fl" joint="leg_joint_fl" gear="1" ctrllimited="true" ctrlrange="-2.6 0.2"  forcelimited="true" forcerange="-0.1569 0.1569" kp=".1"/>
+        <velocity name="leg_joint_fl_vel" joint = "leg_joint_fl" kv ="0.001"/>
+        <position name="thigh_joint_fl" joint="thigh_joint_fl" gear="1" ctrllimited="true" ctrlrange="-2.6 1"  forcelimited="true" forcerange="-0.1569 0.1569" kp=".12"/>
+        <velocity name="thigh_joint_fl_vel" joint = "thigh_joint_fl" kv ="0.0012"/>
+    </actuator>
+</mujoco>
