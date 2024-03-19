@@ -147,6 +147,3 @@ optional arguments:
                         The matplotlib style sheet to use for the eval plots
 ```
 
-Note:
-* Metrics measured during the episodes for the agents are stored in the monitor files `enjoy/<model>_seed_<s>.monitor.csv` of the respective training folder
-* Command sequences for agents trained in NermoCommandedVelocity can be configured at the beginning of `ba_nermo_rl_locomotion/enjoy.py`
