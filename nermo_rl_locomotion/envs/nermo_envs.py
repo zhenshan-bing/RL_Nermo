@@ -3,9 +3,9 @@ from pathlib import Path
 import math
 import timeit
 import random
-import ba_nermo_rl_locomotion
-from ba_nermo_rl_locomotion.utils.utils import logistic_kernel, custom_kernel_1, custom_kernel_2, custom_kernel_3, custom_kernel_4, custom_kernel_dist, custom_kernel_dist_30
-from ba_nermo_rl_locomotion.utils import reward_curricula
+import nermo_rl_locomotion
+from nermo_rl_locomotion.utils.utils import logistic_kernel, custom_kernel_1, custom_kernel_2, custom_kernel_3, custom_kernel_4, custom_kernel_dist, custom_kernel_dist_30
+from nermo_rl_locomotion.utils import reward_curricula
 import numpy as np
 from mujoco_py.generated import const
 from gym import spaces, utils
@@ -178,7 +178,7 @@ class NermoBaseEnv(MujocoEnv, utils.EzPickle):
             n_active_actuators = self.model.nu - len(self.actuator_indices_to_exclude)
             self.action_space = spaces.Box(low=self.action_offset_range[0], high=self.action_offset_range[1], shape=(n_active_actuators,), dtype=np.float32)
 
-        print(self.action_space)
+        # print(self.action_space)
         return self.action_space
     
     def step(self, action, i=None):

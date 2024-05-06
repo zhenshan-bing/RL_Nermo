@@ -232,6 +232,7 @@
         <!-- <include file="test_environment/turn_test_2m.xml"/> -->
        
         <!-- <include file="test_environment/straight_line.xml"/> -->
+        <!-- <include file="test_environment/maze_setup.xml"/> -->
         
 
     </worldbody>
@@ -259,7 +260,7 @@
     
     
     <!-- <include file="test_environment/turn_test_tendon.xml"/> -->
-    <include file="test_environment/maze_path_tendon.xml"/>
+    <!-- <include file="test_environment/maze_path_tendon.xml"/> -->
     
 
 

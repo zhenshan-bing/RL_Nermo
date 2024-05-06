@@ -1,7 +1,7 @@
 import timeit
 import gym
 
-import ba_nermo_rl_locomotion
+import nermo_rl_locomotion
     
 if __name__ == '__main__':
     env = gym.make('NermoCommandedTurningRadiusAndCommandedVelocityEnv-v0')

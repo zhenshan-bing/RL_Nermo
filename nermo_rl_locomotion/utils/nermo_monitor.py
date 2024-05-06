@@ -4,8 +4,8 @@ import numbers
 import time
 import timeit
 from typing import Any, Dict, List, Optional, Tuple, Union
-from ba_nermo_rl_locomotion.envs.nermo_envs import NermoBaseEnv
-from ba_nermo_rl_locomotion.utils.evaluation_util import compute_avg_gait_metrics
+from nermo_rl_locomotion.envs.nermo_envs import NermoBaseEnv
+from nermo_rl_locomotion.utils.evaluation_util import compute_avg_gait_metrics
 
 import numpy as np
 import pandas

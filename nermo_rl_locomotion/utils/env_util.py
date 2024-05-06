@@ -6,7 +6,7 @@ from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.vec_env import DummyVecEnv, VecEnv, VecFrameStack, VecNormalize, SubprocVecEnv
 from gym.wrappers import RescaleAction
 
-from ba_nermo_rl_locomotion.utils.utils import get_wrapper_class
+from nermo_rl_locomotion.utils.utils import get_wrapper_class
 
 
 def make_vec_env(

@@ -7,7 +7,7 @@ import time
 import warnings
 import multiprocessing
 import json
-from ba_nermo_rl_locomotion.utils.env_util import make_vec_env
+from nermo_rl_locomotion.utils.env_util import make_vec_env
 from mujoco_py.builder import MujocoException
 from stable_baselines3.common.monitor import Monitor
 import yaml
@@ -45,10 +45,10 @@ from stable_baselines3.common.vec_env import (
 # For custom activation fn
 from torch import nn as nn  # noqa: F401
 
-import ba_nermo_rl_locomotion   # Required to find the env_id
-from ba_nermo_rl_locomotion.utils.callbacks import SaveVecNormalizeCallback, TrialEvalCallback
-from ba_nermo_rl_locomotion.utils.hyperparams_opt import HYPERPARAMS_SAMPLER
-from ba_nermo_rl_locomotion.utils.utils import ALGOS, MULTI_PROCESSING_CAPABLE_ALGOS, get_callback_list, get_wrapper_class, linear_schedule
+import nermo_rl_locomotion   # Required to find the env_id
+from nermo_rl_locomotion.utils.callbacks import SaveVecNormalizeCallback, TrialEvalCallback
+from nermo_rl_locomotion.utils.hyperparams_opt import HYPERPARAMS_SAMPLER
+from nermo_rl_locomotion.utils.utils import ALGOS, MULTI_PROCESSING_CAPABLE_ALGOS, get_callback_list, get_wrapper_class, linear_schedule
 
 
 # Build paths relative to the absolute path of this script (or rather the script's parent dir)

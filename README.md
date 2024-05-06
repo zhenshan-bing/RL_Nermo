@@ -3,15 +3,14 @@
 
 # Setup & Installation
 ## Prerequisites
-* Ubuntu 20.04 (also tested successfully on Ubuntu 16.04 but without CUDA support)
-* Python >= 3.6
+* Ubuntu 22.04
+* Python 3.8
 
 
-## Install MuJoCo 2.0
-[Download legacy MuJoCo release from Roboti LLC](https://www.roboti.us/download.html) (Note: A MuJoCo 2.X version from the new [OpenAi Mujoco Website](https://mujoco.org/download) should also work but was not tested yet)
+## Install MuJoCo 2.1.0
+[Download MuJoCo 2.1.0 release from from the OpenAi Mujoco Website](https://mujoco.org/download)
 
-- Download [mujoco200 linux](https://www.roboti.us/download/mujoco200_linux.zip) and extract it to `~/.mujoco` as `mujoco200`
-- Download the [activation key](https://www.roboti.us/file/mjkey.txt) from [https://www.roboti.us/license.html](https://www.roboti.us/license.html) and save it to `~/.mujoco`
+- Download [mujoco210 linux](https://github.com/google-deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz) and extract it to `~/.mujoco` as `mujoco210`
 
 
 
@@ -36,12 +35,12 @@
     * Option 1: Install minimal project requirements (for training, for hyperparameter optimization and for enjoying trained agents)
         ```bash
         pip install -e .
-        pip install 'gym>=0.20.0,<1'
+        pip install 'gym==0.20.0'
         ```
     * Option 2: Install with requirements for recording videos
         ```bash
         pip install -e .[recording]
-        pip install 'gym>=0.20.0,<1'
+        pip install 'gym==0.20.0'
         ```
     Note: the correct gym version for our purposes needs to be installed separately due to conflicting version requirements with [Stable Baselines 3 v1.4.0](https://github.com/DLR-RM/stable-baselines3/releases/tag/v1.4.0)
     

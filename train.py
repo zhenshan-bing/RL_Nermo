@@ -7,11 +7,11 @@ import json
 import numpy as np
 import torch as th
 
-from ba_nermo_rl_locomotion.experiment_manager import ExperimentManager
-from ba_nermo_rl_locomotion.utils.utils import ALGOS, StoreDict
-from ba_nermo_rl_locomotion.utils.nermo_monitor import NermoMonitor
+from nermo_rl_locomotion.experiment_manager import ExperimentManager
+from nermo_rl_locomotion.utils.utils import ALGOS, StoreDict
+from nermo_rl_locomotion.utils.nermo_monitor import NermoMonitor
 # Configure environment parameters here:
-from ba_nermo_rl_locomotion.env_kwargs import ENV_KWARGS, EVAL_KWARGS, MONITOR_KWARGS
+from nermo_rl_locomotion.env_kwargs import ENV_KWARGS, EVAL_KWARGS, MONITOR_KWARGS
 
 
 if __name__ == '__main__':

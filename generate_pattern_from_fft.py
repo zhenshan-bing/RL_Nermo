@@ -15,9 +15,9 @@ import timeit
 import gym
 import numpy as np
 import json
-import ba_nermo_rl_locomotion
+import nermo_rl_locomotion
 from sqlalchemy import false, true
-from ba_nermo_rl_locomotion.utils.evaluation_util import plot_fitted_circle, plot_desired_circle
+from nermo_rl_locomotion.utils.evaluation_util import plot_fitted_circle, plot_desired_circle
 import matplotlib
 
 BASE_PATH = Path(__file__).parent

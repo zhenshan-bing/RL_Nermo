@@ -5,10 +5,10 @@ from os import name
 from pathlib import Path
 import timeit
 import json
-from ba_nermo_rl_locomotion.env_kwargs import MONITOR_KWARGS
-from ba_nermo_rl_locomotion.utils.evaluation_util import generate_hildebrand_plot, plot_metrics_over_episode, cal_and_save_metic
-from ba_nermo_rl_locomotion.utils.nermo_monitor import NermoMonitor
-from ba_nermo_rl_locomotion.utils.utils import ALGOS, OFF_POLICY_ALGOS
+from nermo_rl_locomotion.env_kwargs import MONITOR_KWARGS
+from nermo_rl_locomotion.utils.evaluation_util import generate_hildebrand_plot, plot_metrics_over_episode, cal_and_save_metic
+from nermo_rl_locomotion.utils.nermo_monitor import NermoMonitor
+from nermo_rl_locomotion.utils.utils import ALGOS, OFF_POLICY_ALGOS
 import numpy as np
 import argparse
 import tikzplotlib
@@ -18,8 +18,8 @@ from stable_baselines3.common.vec_env import VecVideoRecorder
 from mujoco_py import GlfwContext
 import matplotlib.pyplot as plt
 
-import ba_nermo_rl_locomotion
-from ba_nermo_rl_locomotion.utils.env_util import create_enjoy_env, make_env
+import nermo_rl_locomotion
+from nermo_rl_locomotion.utils.env_util import create_enjoy_env, make_env
 
 # Build paths relative to the absolute path of this script (or rather the script's parent dir)
 # Source: https://stackoverflow.com/a/55051039

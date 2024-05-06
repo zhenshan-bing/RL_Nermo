@@ -6,10 +6,10 @@ import numpy as np
 import seaborn
 import torch as th
 
-from ba_nermo_rl_locomotion.experiment_manager import ExperimentManager
-from ba_nermo_rl_locomotion.utils.utils import ALGOS, StoreDict
+from nermo_rl_locomotion.experiment_manager import ExperimentManager
+from nermo_rl_locomotion.utils.utils import ALGOS, StoreDict
 # Configure environment parameters here:
-from ba_nermo_rl_locomotion.env_kwargs import ENV_KWARGS
+from nermo_rl_locomotion.env_kwargs import ENV_KWARGS
 
 seaborn.set()
 
