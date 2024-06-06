@@ -1,0 +1,11 @@
+<mujoco>
+    <sensor>
+        <jointpos name="m1_tail" joint="m1_tail"/>
+        <!--tendonpos name="sensor_m1_tail_1" tendon="m1_tail_tendon1"/>
+        <tendonpos name="sensor_m1_tail_2" tendon="m1_tail_tendon2"/-->
+    </sensor>
+
+    <actuator>
+        <position name="m1_tail" gear="1" ctrllimited="true" ctrlrange="-1.11 1.11"  forcelimited="true"  forcerange="-0.157 0.157" joint="m1_tail" kp="100"/>
+    </actuator>
+</mujoco>

@@ -1,0 +1,33 @@
+<mujoco>
+    <tendon>
+        <!--spatial name="turn_tendon_2m" rgba="0.7 0.4 0.1 0.8">
+            <site site="s1"/>
+            <site site="s2"/>
+            <site site="s3"/>
+            <site site="s4"/>
+            <site site="s5"/>
+            <site site="s6"/>
+            <site site="s7"/>            
+            <site site="s8"/>
+            <site site="s9"/>
+            <site site="s10"/>
+            <site site="s11"/>
+        </spatial-->
+
+        <spatial name="turn_tendon_1m" rgba="0.7 0.4 0.1 0.8">
+            <site site="s1"/>
+            <site site="s2"/>
+            <site site="s3"/>
+            <site site="s4"/>
+            <site site="s5"/>
+            <site site="s6"/>
+            <site site="s7"/>            
+            <site site="s8"/>
+            <site site="s9"/>
+            <site site="s10"/>
+            <site site="s11"/>
+        </spatial>
+    </tendon>
+
+
+</mujoco>
