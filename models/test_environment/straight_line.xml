@@ -1,7 +1,0 @@
-<mujoco>
-    <body name="straight_line">
-        <!--geom name="pilon1" type="cylinder" pos="0.5 -2 0" size="0.02 0.2" rgba="0.3 0.3 0.8 1"/-->
-        <!--geom name="pilon2" type="cylinder" pos="-0.5 -2 0" size="0.02 0.2" rgba="0.3 0.3 0.8 1"/-->
-
-    </body>
-</mujoco>

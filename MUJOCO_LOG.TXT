@@ -1,3 +1,0 @@
-Tue May  7 00:39:24 2024
-ERROR: Fixed camera id is outside valid range
-

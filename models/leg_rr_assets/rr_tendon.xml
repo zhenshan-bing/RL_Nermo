@@ -1,8 +1,0 @@
-<mujoco>
-    <tendon>
-        <spatial name="m2_tendon_rr" limited="true" range="0 0.001" width="0.001" rgba="1 .4 .4 0.5">
-            <site site="thigh_up_point_2_rr"/>
-            <site site="thigh_up_point_1_rr"/>
-        </spatial>
-    </tendon>
-</mujoco>

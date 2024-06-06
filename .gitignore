@@ -139,3 +139,6 @@ hyperparams/optimization_studies/
 
 # plots
 ba_nermo_rl_locomotion/scripts/plots/
+
+# .egg-info
+RL_Nermo.egg-info/

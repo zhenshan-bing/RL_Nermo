@@ -139,7 +139,6 @@ optional arguments:
                         in the given list is used for the initial point of view.
   --n-episodes N_EPISODES
                         Number of rendered episodes to enjoy (-1 to loop until interrupted by ctrl+c or until the videos have been recorded)
-  --no-rendering        Do not render the agent (useful when only measurements via monitor are needed)
   --no-monitor-file     Do not write the aggregated episode information of the monitor to a file
   --show-eval-plots     Plot diagrams for the locomotion evaluation after each episode
   --style-sheet {subfigure}
