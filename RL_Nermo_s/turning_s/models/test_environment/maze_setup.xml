@@ -1,0 +1,51 @@
+<mujoco>
+    <body name="maze" pos="0.2 -0.4 0.0">
+        <geom name="base_plate" type="box" pos="0 -0.747 0" size="1.2 2.0 0.005" rgba="0.1 0.1 0.1 1"/>
+
+        <!-- Middle Island-->
+        <geom name="box1" type="box" pos="-0.324 -0.84 0.05" size="0.05 0.05 0.05"/>
+        <geom name="box2" type="box" pos="-0.194 -0.763 0.05" euler="0 0 -40" size="0.05 0.05 0.05"/>
+        <geom name="box3" type="box" pos="-0.448 -0.762 0.05" euler="0 0 -149" size="0.05 0.05 0.05"/>
+        <geom name="box4" type="box" pos="-0.449 -0.91 0.05" euler="0 0 -29" size="0.05 0.05 0.05"/>
+        <geom name="box5" type="box" pos="-0.197 -0.907 0.05" euler="0 0 -36" size="0.05 0.05 0.05"/>
+        <geom name="box6" type="box" pos="-0.324 -0.949 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box7" type="box" pos="-0.323 -0.726 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+
+        <!-- Outer Loop -->
+        <geom name="box8" type="box" pos="1.067 -0.519 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box9" type="box" pos="1.067 -0.647 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box10" type="box" pos="1.067 -0.785 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box11" type="box" pos="1.067 -0.923 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box12" type="box" pos="0.925 -0.935 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box13" type="box" pos="0.777 -0.95 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box14" type="box" pos="0.586 -0.972 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box15" type="box" pos="0.398 -1.079 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box16" type="box" pos="0.294 -1.235 0.05" euler="0 0 -34.7" size="0.05 0.05 0.05"/>
+        <geom name="box17" type="box" pos="0.137 -1.393 0.05" euler="0 0 22.6" size="0.05 0.05 0.05"/>
+        <geom name="box18" type="box" pos="-0.060 -1.430 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box19" type="box" pos="-0.286 -1.43 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box20" type="box" pos="-0.517 -1.43 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box21" type="box" pos="-0.72 -1.43 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box22" type="box" pos="-0.907 -1.394 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box23" type="box" pos="-1.033 -1.259 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box24" type="box" pos="-1.129 -1.091 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box25" type="box" pos="-1.137 -0.91 0.05" euler="0 0 -1.6" size="0.05 0.05 0.05"/>
+        <geom name="box26" type="box" pos="-1.128 -0.740 0.05" euler="0 0 -2.6" size="0.05 0.05 0.05"/>
+        <geom name="box27" type="box" pos="-1.090 -0.584 0.05" euler="0 0 -25.7" size="0.05 0.05 0.05"/>
+        <geom name="box28" type="box" pos="-0.993 -0.474 0.05" euler="0 0 -51.3" size="0.05 0.05 0.05"/>
+        <geom name="box29" type="box" pos="-0.849 -0.395 0.05" euler="0 0 -64.4" size="0.05 0.05 0.05"/>
+        <geom name="box30" type="box" pos="-0.701 -0.334 0.05" euler="0 0 -69.3" size="0.05 0.05 0.05"/>
+        <geom name="box31" type="box" pos="-0.576 -0.270 0.05" euler="0 0 -51.3" size="0.05 0.05 0.05"/>
+        <geom name="box32" type="box" pos="-0.507 -0.136 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box33" type="box" pos="-0.507 -0.019 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <!-- Single Curvature -->
+        <geom name="box34" type="box" pos="0.571 -0.519 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box35" type="box" pos="0.427 -0.519 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box36" type="box" pos="0.302 -0.485 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box37" type="box" pos="0.191 -0.381 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box38" type="box" pos="0.102 -0.267 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box39" type="box" pos="0.085 -0.147 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+        <geom name="box40" type="box" pos="0.069 -0.029 0.05" euler="0 0 0" size="0.05 0.05 0.05"/>
+
+    </body>
+</mujoco>

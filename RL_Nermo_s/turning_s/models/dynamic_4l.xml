@@ -1,0 +1,368 @@
+<mujoco>
+
+    <include file="basic_scene.xml" />
+    <include file="left_leg_stl_assets.xml"/>
+    <include file="right_leg_stl_assets.xml"/>
+    <include file="tail_assets/tail_stl_assets.xml"/>
+
+    <asset>
+        <texture type="2d" name="white_nylon" file="mouse_stl/white_nylon.png"/>
+        <texture type="2d" name="cam_reflection" file="mouse_stl/ref.png"/>
+
+        <material name="foam_dark" rgba="0.1 0.1 0.1 1"/>
+        <material name="foam_white" rgba="0.9 0.9 0.9 1"/>
+        <material name="white_nylon" texture="white_nylon"/>
+        <material name="cam_reflection" texture="cam_reflection"/>
+
+        <mesh name="head" file="stl-meshes/head_main.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="head_mounting" file="stl-meshes/head_bracket.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="main_body" file="stl-meshes/main_chest.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="spine_t1" file="stl-meshes/spine_t1.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="spine_t2" file="stl-meshes/spine_t2_zeroed.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="spine_t3" file="stl-meshes/spine_t3_zeroed.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="spine_t4" file="stl-meshes/spine_t4_zeroed.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="hip" file="stl-meshes/hip_zeroed.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="reel_sm" file="stl-meshes/reel_small.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="tail" file="stl-meshes/Tail_Unit.stl" scale="0.001 0.001 0.001"/>
+
+        <mesh name="head_visual" file="mouse_stl/head_main.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="head_down_visual" file = "mouse_stl/head_fix.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="nose_visual" file ="mouse_stl/nose_black.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="cam_visual" file ="mouse_stl/cam.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="cam_glass_visual" file ="mouse_stl/cam_glass.stl" scale="0.0009 0.0009 0.0009"/>
+        <mesh name="spine_mouse_visual" file ="mouse_stl/spine_front.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="battery_frame_visual" file ="mouse_stl/battery_frame.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="pcb_visual" file ="mouse_stl/pcb.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="pcb_board_visual" file ="mouse_stl/pcb_board.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="board_down_visual" file ="mouse_stl/board_down.stl" scale="0.0010 0.0010 0.0010"/>
+        <mesh name="board_mid_visual" file ="mouse_stl/board_mid.stl" scale="0.0010 0.0010 0.0010"/>
+        <mesh name="board_up_visual" file ="mouse_stl/board_up.stl" scale="0.00105 0.00105 0.00105"/>
+        <mesh name="pcb_mpu_visual" file ="mouse_stl/pcb_mpu_grey.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="battery_visual" file ="mouse_stl/battery.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="hip_visual" file ="mouse_stl/hip.stl" scale="0.001 0.001 0.001"/>
+        <mesh name="spine_actuator_pan_visual" file ="mouse_stl/spine_actuator_pan_2.stl" scale="0.001 0.001 0.001"/>
+
+     </asset>
+
+    <worldbody>
+        <light pos="0 0 3" dir="0 0 -1" directional="true"/>
+        <geom type="plane" size="0 0 0.03" material="matplane" rgba="1 1 1 1"/>
+        <camera name="body_cam" mode="fixed" pos="20 0.1 0.05" euler="90 90 0" fovy="1"/>
+        <!-- <camera name="top camera" mode="fixed" pos="0 -1 30" euler="0 0 180" fovy="6"/> -->
+
+        <!-- <camera name="top camera" mode="fixed" pos="-0.4 -0.4 30" euler="0 0 180" fovy="3"/>
+
+        <camera name="left camera" mode="fixed" pos="0.8 -0.4 0.2" euler="0 89 90.0" fovy="60" />
+
+        <camera name="front camera" mode="fixed" pos="-0.4 -1.6 0.2" euler="89 0 0" fovy="60" /> -->
+
+
+        <!-- <camera name="top camera" mode="fixed" pos="-0.3 -0.3 30" euler="0 0 180" fovy="3"/>
+
+        <camera name="left camera" mode="fixed" pos="0.6 -0.3 0.2" euler="0 89 90.0" fovy="60" />
+
+        <camera name="front camera" mode="fixed" pos="-0.3 -1.2 0.2" euler="89 0 0" fovy="60" /> -->
+
+
+        <camera name="top camera" mode="fixed" pos="-0.5 -0.5 30" euler="0 0 180" fovy="3"/>
+
+        <camera name="left camera" mode="fixed" pos="1 -0.5 0.2" euler="0 89 90.0" fovy="60" />
+
+        <camera name="front camera" mode="fixed" pos="-0.5 -2 0.2" euler="89 0 0" fovy="60" />
+
+        <body name="mouse" pos  ="0 0 0.1">
+            <joint name="rail" type="free" />
+            <camera name="tail view camera" mode="track" pos="0 0.52 0.20" euler="110 180 0" fovy="60"/>
+            <camera name="left side view camera" mode="track" pos="0.6 0.07 -0.02" euler="90 90 0"/>
+            <camera name="right side view camera" mode="track" pos="-0.6 0.07 -0.02" euler="90 -90 0"/>
+            <camera name="top view camera" mode="track" pos="0 0.1 0.6" euler="0 0 180"/>
+            <camera name="head view camera" mode="track" pos="0 -0.52 0.20" euler="70 0 0" fovy="60"/>
+            <camera name="bottom view camera" mode="track" pos="0 0.07 -1" euler="180 0 0"/>
+
+            <geom name="mouse_body" mass="0.15" type="box" pos="0 0.04 0" size="0.0115 0.048 0.025" rgba="0.8 0.8 0.8 0"/>
+            <site name="imu" size="0.004" pos="0 0.045 0.01" rgba="0.5 0.5 0.99 0"/>
+            <body name="visual_mouse_body" pos="0.0 0 0" euler="0 0 0">
+                <!-- <geom name="spine_mouse" type="mesh" mesh="main_body" mass="0.0" contype="0" conaffinity="0" rgba="0.8 0.8 0.8 1"/> -->
+                <geom name="spine_mouse_visual" type="mesh" mesh="spine_mouse_visual" mass="0" contype="0" conaffinity="0" 
+                pos="0 0.064 0.006" material="white_nylon"/>
+                
+            </body>
+            <geom name="head_servo_tail" type="mesh" mesh="servo_tail" pos="0.0 -0.016 0.0131" mass="0" contype="0" euler="90 90 0" conaffinity="0" rgba="1 0.423529 0.0392157 1"/>
+            <geom name="head_actuator_visual" type="mesh" mesh="actuator_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="-0.0047 -0.012 0.0012" euler="0 -90 -90" rgba="0.1 0.1 0.1 1"/>
+            <geom name="spine_sag_actuator_visual" type="mesh" mesh="actuator_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="0.0047 0.026 0.0192" euler="90 90 6.7" rgba="0.1 0.1 0.1 1"/>
+            <geom name="battery_frame_visual" type="mesh" mesh="battery_frame_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="0.000 0.04885 -0.0215" euler="-88 180 180" material="white_nylon"/>
+            <geom name="pcb_visual" type="mesh" mesh="pcb_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="0.00 0.0582 -0.0015" euler="2 90 90" rgba="0.1 0.1 0.1 1"/>
+            <geom name="pcb_board_visual" type="mesh" mesh="pcb_board_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="-0.015 0.0565 -0.0058" euler="2 180 90" material="white_nylon"/>
+            <geom name="board_down_visual" type="mesh" mesh="board_down_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="-0.00 0.05615 -0.00398" euler="2 90 90" rgba="0.1 0.1 0.4 1"/>
+            <geom name="board_mid_visual" type="mesh" mesh="board_mid_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="-0.00 0.0498 -0.0001" euler="92 0 0" rgba="0.5 0.5 0.5 1"/>
+            <geom name="board_up_visual" type="mesh" mesh="board_up_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="-0.004 0.059 0.00485" euler="92 90 0" rgba="0.1 0.5 0.1 1"/>
+            <geom name="pcb_mpu_visual" type="mesh" mesh="pcb_mpu_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="-0.018 0.0643 -0.0066" euler="2 -0 90" rgba="0.5 0.5 0.5 1"/>
+            <geom name="battery_visual" type="mesh" mesh="battery_visual" mass="0.0" contype="0" conaffinity="0"
+                pos="-0.0 0.0875 -0.013" euler="92 -0 0" rgba="0.5 0.2 0.2 1"/>
+                
+
+
+            <body name="mouse_bracket" pos="0 -0.016 0.013" euler="0 0 0">
+                <joint name="neck" pos="0 0 0" type="hinge" axis="0 0 1" damping="0.01" armature="0.00065" limited="true" range="-90 90" ref="0"/>
+                <geom name="visual_mouse_bracket" type="mesh" mesh="head_mounting" mass="0.005" contype="0" conaffinity="0" material="white_nylon"/>
+                
+                <body name="mouse_head" pos="0 -0.0106 0.0144" euler="0 0 0">
+                    <joint name="head" pos="0 0 0" type="hinge" axis="1 0 0" damping="0.01" armature="0.00065" limited="true" range="-90 90" ref="0"/>
+                    <geom name="visual_mouse_head" type="mesh" mesh="head" mass="0.01" contype="0" conaffinity="0" rgba="0.95 0.95 0.95 0"/>
+                    <camera name="head camera" mode="fixed" pos="0 -0.04 0" euler="90 180 0"/>
+                    <geom name="head_visual" type="mesh" mesh="head_visual" mass="0.0" contype="0" conaffinity="0"  
+                        pos="-0.00005 -0.0043 -0.0087" euler="88.5 89.8 0.6" material="white_nylon"/>
+                    <geom name="head_down_visual" type="mesh" mesh="head_down_visual" mass="0.0" contype="0" conaffinity="0"  
+                        pos="-0.00005 -0.0043 -0.0087" euler="88.5 89.8 0.6" material="white_nylon"/>
+                    <geom name="nose_visual" type="mesh" mesh="nose_visual" mass="0.0" contype="0" conaffinity="0"  
+                        pos="-0.0002 -0.046 -0.0087" euler="90 0.0 0.0" rgba="0.1 0.1 0.1 1"/>
+                    <geom name="cam_visual_right" type="mesh" mesh="cam_visual" mass="0.0" contype="0" conaffinity="0"  
+                        pos="-0.009 -0.0244 -0.0001" euler="-90 40.0 0.0" rgba="0.1 0.1 0.1 1"/>
+                    <geom name="cam_visual_left" type="mesh" mesh="cam_visual" mass="0.0" contype="0" conaffinity="0"  
+                        pos="0.009 -0.0244 -0.0001" euler="-90 -40.0 0.0" rgba="0.1 0.1 0.1 1"/>
+                    <geom name="cam_glass_visual_left" type="mesh" mesh="cam_glass_visual" mass="0.0" contype="0" conaffinity="0"  
+                        pos="-0.022 -0.0474 -0.0001" euler="90 40.0 0.0" rgba="0.3 0.3 0.3 1"/>
+                    <geom name="cam_glass_visual_right" type="mesh" mesh="cam_glass_visual" mass="0.0" contype="0" conaffinity="0"  
+                        pos="-0.0374 0.0024 -0.0001" euler="90 -40.0 0.0" rgba="0.3 0.3 0.3 1"/>
+                    
+                </body>
+            </body>
+
+            <!-- Here we define the front left leg -->
+            <body name="fl" pos="0.0115 0 0">
+                <include file="leg_fl_assets/fl_asset_exp.xml"/>
+            </body>
+
+            <!-- Here wer define the front right leg -->
+            <body name="fr" pos="-0.0115 0 0">
+                <include file="leg_fr_assets/fr_asset_exp.xml"/>
+            </body>
+
+            <!--
+            <body name="rl" pos="0.0175 0.1223 0.0093" euler="0 0 0">
+                <include file="leg_rl_assets/rl_asset_exp.xml"/>
+            </body>
+            <body name="rr" pos="-0.0175 0.1223 0.0093" euler="0 0 0">
+                <include file="leg_rr_assets/rr_asset_exp.xml"/>
+            </body>
+            -->
+            <!-- Here we define the rear body of the mouse -->
+            <body pos="0 0.064 0.026" name="t1">
+                <geom name="visual_t1" type="mesh" mesh="spine_t1" mass="0.002" contype="0" conaffinity="0" material="white_nylon"/>
+                
+                <site name="body_ss" pos="0 0 0" size="0.002" rgba=".9 .9 0 0"/>
+
+                <site name="s2_ss" pos="0.0065 0 0" size="0.002" rgba="1 .4 .4 0"/>
+                <site name="s3_ss" pos="-0.0065 0 0" size="0.002" rgba="1 .4 .4 0"/>
+
+                <site name="s4_ss" pos="0.0065 0.005 -0.0008" size="0.002" rgba="1 .4 .4 0"/>
+                <site name="s5_ss" pos="-0.0065 0.005 -0.0008" size="0.002" rgba="1 .4 .4 0"/>
+                <body pos="0 0.0084 -0.001" name="t2" euler="-11.4 0 0">
+                    <joint name="t2" pos="0 0 0" type="hinge" axis="0 0 1" damping="0.01" stiffness="1.2" armature="0.00065" limited="true" range="-90 90" ref="0"/>
+                    <geom name="visual_t2" type="mesh" mesh="spine_t2" mass="0.002" contype="0" conaffinity="0" material="white_nylon"/>
+
+                    <site name="s6_ss" pos="0.0065 0.0035 -0.0006" size="0.002" rgba="1 .4 .4 0"/>
+                    <site name="s7_ss" pos="-0.0065 0.0035 -0.0006" size="0.002" rgba="1 .4 .4 0"/>
+
+                    <site name="s8_ss" pos="0.0065 0.011 -0.0012" size="0.002" rgba="1 .4 .4 0"/>
+                    <site name="s9_ss" pos="-0.0065 0.011 -0.0012" size="0.002" rgba="1 .4 .4 0"/>
+                    <body pos="0 0.014 -0.00075" name="t3" euler="-6.9 0 0">
+                        <joint name="t3" pos="0 0 0" type="hinge" axis="0 0 1" damping="0.01" stiffness="1.2" armature="0.00065" limited="true" range="-90 90" ref="0"/>
+                        <geom name="visual_t3" type="mesh" mesh="spine_t3" mass="0.002" contype="0" conaffinity="0" material="white_nylon"/>
+        
+                        <site name="s10_ss" pos="0.0065 0.0035 -0.0006" size="0.002" rgba="1 .4 .4 0"/>
+                        <site name="s11_ss" pos="-0.0065 0.0035 -0.0006" size="0.002" rgba="1 .4 .4 0"/>
+
+                        <site name="s12_ss" pos="0.0065 0.011 -0.0012" size="0.002" rgba="1 .4 .4 0"/>
+                        <site name="s13_ss" pos="-0.0065 0.011 -0.0012" size="0.002" rgba="1 .4 .4 0"/>
+
+                        <body pos="0 0.014 -0.00075" name="t4" euler="-5.4 0 0">
+                            <joint name="t4" pos="0 0 0" type="hinge" axis="0 0 1" damping="0.01" stiffness="1.2" armature="0.00065" limited="true" range="-90 90" ref="0"/>
+                            <geom name="visual_t4" type="mesh" mesh="spine_t4" mass="0.002" contype="0" conaffinity="0" material="white_nylon"/>
+
+                            <site name="s14_ss" pos="0.0065 0.0035 -0.0006" size="0.002" rgba="1 .4 .4 0"/>
+                            <site name="s15_ss" pos="-0.0065 0.0035 -0.0006" size="0.002" rgba="1 .4 .4 0"/>
+
+                            <site name="s16_ss" pos="0.0065 0.014 -0.0014" size="0.002" rgba="1 .4 .4 0"/>
+                            <site name="s17_ss" pos="-0.0065 0.014 -0.0014" size="0.002" rgba="1 .4 .4 0"/>
+
+                            <body pos="0.0 0.0165 -0.0009" name="hip" euler="8.8 0 0">
+                                <joint name="hip" pos="0 0 0" type="hinge" axis="0 0 1" damping="0.01" stiffness="1.2" armature="0.00065" limited="true" range="-90 90" ref="0"/>
+                                <geom name="visual_hip" type="mesh" mesh="hip" mass="0.06" contype="0" conaffinity="0" rgba="0.6 0.6 0.6 0" />
+
+                                <site name="s18_ss" pos="0.0065 0.002 -0.0005" size="0.002" rgba="1 .4 .4 0"/>
+                                <site name="s19_ss" pos="-0.0065 0.002 -0.0005" size="0.002" rgba="1 .4 .4 0"/>
+
+                                <site name="sx1_ss" pos="0.01 0.0107 -0.0005" size="0.002" euler="11.9 0 -0" rgba="1 .4 .4 0"/>
+                                <site name="sx2_ss" pos="-0.01 0.0107 -0.0005" size="0.002" euler="11.9 0 -0" rgba="1 .4 .4 0"/>
+
+                                <geom name="hip_visual" type="mesh" mesh="hip_visual" mass="0" contype="0" conaffinity="0"
+                                    pos="0.00 -0.0473 -0.0157" euler="15 0 -0" material="white_nylon"/>
+                                <geom name="spine_actuator_visual" type="mesh" mesh="actuator_visual" mass="0" contype="0" conaffinity="0"
+                                    pos="0.00479 0.0078 -0.0107" euler="95 90 -0" rgba="0.1 0.1 0.1 1"/>
+
+                                <body name="servo_spine" pos="0 0.0107 0" euler="3 0 0">
+                                    <geom name="m_ss" type="cylinder" mass="0.002" fromto="0 0 -0.00165 0 0 0.00165" size="0.0065" rgba=".8 .1 .1 0" conaffinity="0" />
+                                    <joint name="m_ss" pos="0 0 0" type="hinge" axis="0 0 1" armature="0.00065" damping="0.01" limited="true" range="-180 180"/>
+
+                                    <body name="visual_m_ss" pos="0 0 -0.0015" euler="90 0 0">
+                                        <geom name="visual_m_ss" type="mesh" mesh="reel_sm" mass="0" contype="0" conaffinity="0" material="white_nylon"/>
+                                    </body>
+                                    <geom name="spine_actuator_pan_visual" type="mesh" mesh="spine_actuator_pan_visual" mass="0.0" contype="0" conaffinity="0"
+                                    pos="-0.00 0.0 0.002" euler="3 180 -0" rgba="1 0.423529 0.0392157 1"/>
+
+                                    <site name="s1_ss" pos="0 0.007 0" size="0.002" rgba="1 .4 .4 0"/>
+                                </body>
+
+                                <body name="rl" pos="0.0175 0.0085 0" euler="11.9 0 0">
+                                    <include file="leg_rl_assets/rl_asset_exp.xml"/>
+                                </body>
+                                
+                                <body name="rr" pos="-0.0175 0.0085 0" euler="11.9 0 0">
+                                    <include file="leg_rr_assets/rr_asset_exp.xml"/>
+                                </body>
+                                
+
+                                <body name="visual_mouse_tail" pos="0 0.0217 0.0028" euler="25 0 0">
+                                    <include file="tail_assets/tail.xml"/>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+
+        
+        <!-- <include file="test_environment/turn_test_2m.xml"/> -->
+       
+        <!-- <include file="test_environment/straight_line.xml"/> -->
+
+    </worldbody>
+    <equality>
+        <connect anchor="0 0 0" body1="thigh_up_link_1_fl" body2="thigh_up_link_2_fl"  solimp="1 1 0.001"/>
+        <connect anchor="0 0 0" body1="thigh_up_link_1_fr" body2="thigh_up_link_2_fr"  solimp="1 1 0.001"/>
+        <connect anchor="0 0 0" body1="thigh_up_link_1_rl" body2="thigh_up_link_2_rl"  solimp="1 1 0.001"/>
+        <connect anchor="0 0 0" body1="thigh_up_link_1_rr" body2="thigh_up_link_2_rr"  solimp="1 1 0.001"/>
+        <!--
+            <connect anchor="0 0 0" body1="thigh_up_link_1_rr" body2="thigh_up_link_2_rr"  solimp="1 1 0.001" solref="0.002 1"/>
+        -->
+    </equality>
+    <contact>
+        <exclude body1="main_leg_fl" body2="servo_horn_fl"/>
+        <exclude body1="main_leg_fr" body2="servo_horn_fr"/>
+        <exclude body1="main_leg_rl" body2="servo_horn_rl"/>
+        <exclude body1="main_leg_rr" body2="servo_horn_rr"/>
+    </contact>
+    <!-- The tendon models for each leg -->
+    <include file="leg_fl_assets/fl_tendon.xml"/>
+    <include file="leg_fr_assets/fr_tendon.xml"/>
+    <include file="leg_rl_assets/rl_tendon.xml"/>
+    <include file="leg_rr_assets/rr_tendon.xml"/>
+    <include file="tail_assets/tail_tendon.xml"/>
+    
+    
+    <!-- <include file="test_environment/turn_test_tendon.xml"/> -->
+   
+
+
+    <tendon>
+        <spatial name="m1_tendon_ss" limited="true" range="0 0.07405" width="0.0005" rgba="1 .4 .4 0.3">
+            <site site="s1_ss"/>
+            <geom geom="m_ss" sidesite="sx1_ss"/>
+            <site site="s18_ss"/>
+            <site site="s16_ss"/>
+            <site site="s14_ss"/>
+            <site site="s12_ss"/>
+            <site site="s10_ss"/>
+            <site site="s8_ss"/>
+            <site site="s6_ss"/>
+            <site site="s4_ss"/>
+            <site site="s2_ss"/>
+        </spatial>
+
+        <spatial name="m2_tendon_ss" limited="true" range="0 0.07405" width="0.0005" rgba="1 .4 .4 0.3">
+            <site site="s1_ss"/>
+            <geom geom="m_ss" sidesite="sx2_ss"/>
+            <site site="s19_ss"/>
+            <site site="s17_ss"/>
+            <site site="s15_ss"/>
+            <site site="s13_ss"/>
+            <site site="s11_ss"/>
+            <site site="s9_ss"/>
+            <site site="s7_ss"/>
+            <site site="s5_ss"/>
+            <site site="s3_ss"/>
+        </spatial>
+    </tendon>
+
+    <!-- The sensor and actuator models for each leg -->
+    <!-- OVERALL SENSOR ARRAY:
+            0-7: Servo angle values
+            8-11: tail, neck, head, spine servo angles
+            12-15: knee joint angles
+            16-19: foot touch sensor
+
+            20-22: pos sensor of IMU
+            23-26: orientation quaternion of IMU
+            27-29: linear velocity of IMU
+            30-32: accelerometer of the IMU
+            33-35: gyroscope of the IMU
+            36-45: foot position-->
+    <include file="leg_fl_assets/fl_sensor_actuator.xml"/>
+    <include file="leg_fr_assets/fr_sensor_actuator.xml"/>
+    <include file="leg_rl_assets/rl_sensor_actuator.xml"/>
+    <include file="leg_rr_assets/rr_sensor_actuator.xml"/>
+    <include file="tail_assets/tail_sensor_actuator.xml"/>
+
+    <sensor>
+        <jointpos name="neck" joint="neck"/>
+        <jointpos name="head" joint="head"/>
+        <jointpos name="spine" joint="m_ss"/>
+<!--        <jointpos name="hip" joint="hip"/>-->
+        <!--add sensor for knee up-->
+        <jointpos name="knee_fl" joint="knee_up_fl"/>
+        <jointpos name="knee_fr" joint="knee_up_fr"/>
+        <jointpos name="knee_rl" joint="knee_up_rl"/>
+        <jointpos name="knee_rr" joint="knee_up_rr"/>
+<!--        <jointvel name="thigh_joint_fl_vel" joint="thigh_joint_fl"/>-->
+<!--        <jointvel name="leg_joint_fl_vel" joint="leg_joint_fl"/>-->
+        <!---->
+        <!--add sensor for foot touch-->
+        <touch name="fl_t1" site="foot_s_fl"/>
+        <touch name="fr_t1" site="foot_s_fr"/>
+        <touch name="rl_t1" site="foot_s_rl"/>
+        <touch name="rr_t1" site="foot_s_rr"/>
+        <!---->
+        <framepos name="com_pos" objtype="site" objname="imu"/>
+        <framequat name="com_quat" objtype="site" objname="imu"/>
+        <framelinvel name="com_vel" objtype="site" objname="imu"/>
+        <accelerometer name="imu_acc" site="imu"/>
+        <gyro name="imu_gyro" site="imu"/>
+        <!--add sensor for foot_placement-->
+        <framepos name="fl_foot_pos" objtype="site" objname="ankle_fl"/>
+        <framepos name="fr_foot_pos" objtype="site" objname="ankle_fr"/>
+        <framepos name="rl_foot_pos" objtype="site" objname="ankle_rl"/>
+        <framepos name="rr_foot_pos" objtype="site" objname="ankle_rr"/>
+        
+        <!---->
+        <framequat name="rare_orientation" objtype="site" objname="sx1_ss"/>
+    </sensor>
+
+    <actuator>
+        <!--reference ctrlrange from previous project-->
+        <position name="neck" gear="1" ctrllimited="true" ctrlrange="-0.785398 0.785398"  forcelimited="true"  forcerange="-.157 .157" joint="neck" kp="100"/>
+        <position name="head" gear="1" ctrllimited="true" ctrlrange="-0.785398 0.785398"  forcelimited="true"  forcerange="-.157 .157" joint="head" kp="100"/>
+        <position name="spine" gear="1" ctrllimited="true" ctrlrange="-0.47 0.47"  forcelimited="true"  forcerange="-.157 .157" joint="m_ss" kp="1"/>
+        <!-- <position name="spine" gear="1" ctrllimited="true" ctrlrange="-2 2"  forcelimited="true"  forcerange="-.157 .157" joint="m_ss" kp=".1"/> -->
+    </actuator>
+</mujoco>
